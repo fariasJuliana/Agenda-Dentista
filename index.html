@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Odontológica</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="topo">
+        <div class="logo">
+            <img src="logo.png" alt="Logo da Empresa" width="150">
+        </div>
+
+        <div class="data-navegacao">
+            <button id="diaAnterior">‹</button>
+            <div>
+                <strong id="dataCompleta">25/09/2026</strong>
+                <small id="dataTexto">Sexta-feira, 25 de Setembro de 2026</small>
+            </div>
+            <button id="proximoDia">›</button>
+        </div>
+
+    </header>
+
+    <main class="container">
+
+        <section class="cabecalho">
+            <div>
+                <h1>Dra. Ana Silva</h1>
+            </div>
+
+            <div class="cards-resumo">
+                <div class="resumo-card">
+                    <span>Pacientes Hoje</span>
+                    <strong id="totalPacientes">4</strong>
+                </div>
+
+                <div class="resumo-card">
+                    <span>Pendentes</span>
+                    <strong id="totalPendentes">1</strong>
+                </div>
+
+                <div class="resumo-card">
+                    <span>Consultórios</span>
+                    <strong>2</strong>
+                </div>
+            </div>
+        </section>
+
+        <div class="conteudo">
+
+            <section class="agenda-area">
+                <div class="titulo-secao">
+                    <h2>Agenda Diária</h2>
+                    <span>08:00 — 18:00</span>
+                </div>
+
+                <div class="agenda" id="agenda">
+                    <div class="horario-linha">
+                        <span>08:00</span>
+                        <div></div>
+                    </div>
+
+                    <div class="horario-linha">
+                        <span>09:00</span>
+                        <div></div>
+                    </div>
+
+                    <article class="consulta confirmada">
+                        <div class="hora-consulta">09:00<br><small>10:00</small></div>
+                        <div class="dados">
+                            <strong>Carlos Silva</strong>
+                            <span>Limpeza Dental</span>
+                        </div>
+                        <span class="status">Confirmado</span>
+                        <button class="prontuario">▣ Prontuário</button>
+                    </article>
+
+                    <article class="consulta confirmada">
+                        <div class="hora-consulta">10:30<br><small>11:30</small></div>
+                        <div class="dados">
+                            <strong>Mariana Costa</strong>
+                            <span>Restauração</span>
+                        </div>
+                        <span class="status">Confirmado</span>
+                        <button class="prontuario">▣ Prontuário</button>
+                    </article>
+
+                    <div class="horario-linha">
+                        <span>12:00</span>
+                        <div class="almoco">Almoço</div>
+                    </div>
+
+                    <div class="horario-linha">
+                        <span>13:00</span>
+                        <div></div>
+                    </div>
+
+                    <article class="consulta pendente">
+                        <div class="hora-consulta">14:00<br><small>15:00</small></div>
+                        <div class="dados">
+                            <strong>Pedro Almeida</strong>
+                            <span>Extração</span>
+                        </div>
+                        <span class="status status-pendente">Pendente</span>
+                        <button class="prontuario">▣ Prontuário</button>
+                    </article>
+
+                    <article class="consulta confirmada">
+                        <div class="hora-consulta">15:30<br><small>16:30</small></div>
+                        <div class="dados">
+                            <strong>Luciana Mendes</strong>
+                            <span>Ortodontia</span>
+                        </div>
+                        <span class="status">Confirmado</span>
+                        <button class="prontuario">▣ Prontuário</button>
+                    </article>
+
+                    <div class="horario-linha">
+                        <span>17:00</span>
+                        <div></div>
+                    </div>
+
+                    <div class="horario-linha">
+                        <span>18:00</span>
+                        <div></div>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="lateral">
+
+                <section class="calendario-box">
+                    <div class="lateral-titulo">
+                        <h2>Visão Geral</h2>
+                    </div>
+
+                    <div class="mes">
+                        <button>‹</button>
+                        <strong>Setembro 2026</strong>
+                        <button>›</button>
+                    </div>
+
+                    <div class="dias-semana">
+                        <span>DOM</span><span>SEG</span><span>TER</span>
+                        <span>QUA</span><span>QUI</span><span>SEX</span><span>SÁB</span>
+                    </div>
+
+                    <div class="dias">
+                        <span class="fora">30</span>
+                        <span>1</span><span>2</span><span>3</span><span>4</span>
+                        <span>5</span><span>6</span>
+                        <span>7</span><span>8</span><span>9</span><span>10</span>
+                        <span>11</span><span>12</span><span>13</span>
+                        <span>14</span><span>15</span><span>16</span><span>17</span>
+                        <span>18</span><span>19</span><span>20</span>
+                        <span>21</span><span>22</span><span>23</span><span>24</span>
+                        <span class="selecionado">25</span><span>26</span><span>27</span>
+                        <span>28</span><span>29</span><span>30</span>
+                        <span class="fora">1</span><span class="fora">2</span><span class="fora">3</span>
+                    </div>
+                </section>
+
+                <section class="proximos">
+                    <h2>Próximos Pacientes</h2>
+
+                    <div class="busca">
+                        
+                        <input type="text" id="buscaPaciente" placeholder="Buscar paciente">
+                    </div>
+
+                    <div class="paciente-mini">
+                        <div>
+                            <strong>Carlos Silva</strong>
+                            <span>09:00 — 10:00</span>
+                        </div>
+                    </div>
+
+                    <div class="paciente-mini">
+                        <div>
+                            <strong>Mariana Costa</strong>
+                            <span>10:30 — 11:30</span>
+                        </div>
+                    </div>
+
+                    <div class="paciente-mini">
+                        <div>
+                            <strong>Pedro Almeida</strong>
+                            <span>14:00 — 15:00</span>
+                        </div>
+                    </div>
+
+                    <div class="paciente-mini">
+                        <div>
+                            <strong>Luciana Mendes</strong>
+                            <span>15:30 — 16:30</span>
+                        </div>
+                    </div>
+                </section>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- Modal de novo agendamento -->
+    <div class="modal" id="modal">
+        <div class="modal-conteudo">
+            <button class="fechar" id="fecharModal">&times;</button>
+            <h2>Novo Agendamento</h2>
+            <p>Cadastre a consulta do paciente.</p>
+
+            <form id="formAgendamento">
+                <label>Nome do paciente</label>
+                <input type="text" id="nome" placeholder="Ex.: João Santos" required>
+
+                <label>Horário</label>
+                <input type="time" id="hora" required>
+
+                <label>Procedimento</label>
+                <select id="procedimento" required>
+                    <option value="">Selecione</option>
+                    <option>Consulta / Avaliação</option>
+                    <option>Limpeza Dental</option>
+                    <option>Restauração</option>
+                    <option>Extração</option>
+                    <option>Ortodontia</option>
+                    <option>Clareamento</option>
+                    <option>Tratamento de Canal</option>
+                </select>
+
+                <label>Status</label>
+                <select id="status">
+                    <option value="Confirmado">Confirmado</option>
+                    <option value="Pendente">Pendente</option>
+                </select>
+
+                <button type="submit" class="btn-salvar">Agendar Consulta</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

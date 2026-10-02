@@ -1,0 +1,327 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f4f7f8;
+    color: #333;
+}
+
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 15px 30px;
+}
+
+.topo .data-navegacao {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 25px 30px 45px;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.cabecalho h1 { font-size: 24px; margin-bottom: 5px; }
+.cabecalho p { color: #78868b; font-size: 14px; }
+
+.conteudo {
+    display: grid;
+    grid-template-columns: 1fr 310px;
+    gap: 18px;
+}
+
+.lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+.data-navegacao {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+}
+
+.data-navegacao button,
+.mes button,
+.fechar {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.data-navegacao button { font-size: 25px; color: #34474d; }
+.data-navegacao strong, .data-navegacao small { display: block; }
+.data-navegacao strong { font-size: 13px; }
+.data-navegacao small { color: #7b898d; margin-top: 3px; }
+
+.btn-novo, .btn-salvar {
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.btn-novo {
+    background: #007a3f;
+    padding: 12px 18px;
+    border-radius: 7px;
+}
+
+.btn-novo:hover { background: #1b766b; }
+
+.btn-salvar {
+    width: 100%;
+    margin-top: 22px;
+    height: 42px;
+    background: #1b766b;
+}
+
+/* Cards & Containers */
+.agenda-area,
+.calendario-box,
+.proximos,
+.resumo-card {
+    background: #fff;
+    border: 1px solid #e0e7e8;
+    border-radius: 8px;
+}
+
+.cards-resumo { display: flex; gap: 12px; }
+
+.resumo-card {
+    min-width: 125px;
+    padding: 13px 16px;
+    border-radius: 7px;
+}
+
+.resumo-card span { display: block; color: #7c888c; font-size: 12px; margin-bottom: 5px; }
+.resumo-card strong { font-size: 19px; }
+
+.titulo-secao {
+    padding: 17px 20px;
+    border-bottom: 1px solid #e8eded;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo-secao h2, .lateral h2 { font-size: 17px; }
+.titulo-secao span { font-size: 12px; color: #879397; }
+
+/* Agenda e Consultas */
+.agenda { padding: 12px 15px 18px; }
+
+.horario-linha {
+    min-height: 45px;
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    align-items: center;
+    color: #879397;
+    font-size: 11px;
+}
+
+.horario-linha > div {
+    border-top: 1px solid #edf0f1;
+    height: 1px;
+}
+
+.almoco {
+    background: #f7f8f8;
+    border-radius: 5px;
+    padding: 7px 12px;
+    color: #707d80;
+    border-top: none !important;
+    height: auto !important;
+}
+
+.consulta {
+    min-height: 68px;
+    margin: 4px 0;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 58px 1fr auto auto;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-left: 4px solid #1b766b;
+}
+
+.consulta.confirmada { background: #e9f8f0; }
+.consulta.pendente { background: #fff8dd; border-left-color: #e9c34d; }
+
+.hora-consulta { font-size: 12px; font-weight: bold; color: #44575b; }
+.hora-consulta small { font-weight: normal; }
+
+.dados strong, .dados span,
+.paciente-mini strong, .paciente-mini span { display: block; }
+.dados strong { font-size: 13px; }
+.dados span { margin-top: 5px; font-size: 11px; color: #617075; }
+
+.status {
+    background: #a8e7c3;
+    color: #1b766b;
+    border-radius: 15px;
+    padding: 5px 9px;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.status-pendente { background: #f5d77d; color: #7d5e00; }
+
+.prontuario {
+    border: 1px solid #cbd6d8;
+    background: #fff;
+    border-radius: 5px;
+    padding: 6px 9px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/* Calendário e Busca */
+.calendario-box, .proximos { padding: 17px; }
+
+.mes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18px 0 13px;
+}
+
+.mes button { font-size: 20px; }
+.mes strong { font-size: 13px; }
+
+.dias-semana, .dias {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    gap: 5px;
+}
+
+.dias-semana span { font-size: 8px; color: #929da0; }
+.dias span { font-size: 11px; padding: 6px 0; }
+.dias .fora { color: #c5ccce; }
+.dias .selecionado { background: #1b766b; color: #fff; border-radius: 50%; }
+
+.proximos h2 { margin-bottom: 13px; }
+
+.busca {
+    height: 34px;
+    border: 1px solid #dfe5e6;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 9px;
+    color: #8d999c;
+    margin-bottom: 10px;
+}
+
+.busca input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 11px;
+}
+
+.paciente-mini {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 3px;
+    border-bottom: 1px solid #edf0f1;
+}
+
+.paciente-mini strong { font-size: 11px; }
+.paciente-mini span { font-size: 10px; color: #8a9699; margin-top: 4px; }
+
+/* Modal & Form */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(24, 42, 46, 0.45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.ativo { display: flex; }
+
+.modal-conteudo {
+    width: 430px;
+    max-width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 28px;
+    position: relative;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.modal-conteudo h2 { font-size: 21px; }
+.modal-conteudo p { color: #7d898c; font-size: 13px; margin: 6px 0 20px; }
+
+.fechar {
+    position: absolute;
+    right: 18px;
+    top: 13px;
+    font-size: 28px;
+    color: #738084;
+}
+
+form label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 13px 0 6px;
+}
+
+form input, form select {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #d6dfe0;
+    border-radius: 6px;
+    padding: 0 11px;
+    outline: none;
+}
+
+form input:focus, form select:focus { border-color: #299487; }
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .conteudo { grid-template-columns: 1fr; }
+    .lateral { display: grid; grid-template-columns: 1fr 1fr; }
+    .topo { padding: 0 15px; }
+    .cards-resumo { flex-wrap: wrap; }
+}
+
+@media (max-width: 650px) {
+    .cabecalho { display: block; }
+    .cards-resumo { margin-top: 15px; }
+    .lateral { display: flex; }
+    .consulta { grid-template-columns: 45px 1fr; }
+    .status, .prontuario, .data-navegacao { display: none; }
+    .topo { height: 65px; }
+}
